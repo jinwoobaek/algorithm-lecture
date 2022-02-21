@@ -36,4 +36,10 @@ public class RecursiveCall {
         if (num == 3) return 4;
         return this.practice(num - 1) + this.practice(num - 2) + this.practice(num - 3);
     }
+
+    public int fibonacci(int n) {
+        if (n == 0) return 0;
+        if (n == 1) return 1;
+        return this.fibonacci(n - 1) + this.fibonacci(n - 2);
+    }
 }
