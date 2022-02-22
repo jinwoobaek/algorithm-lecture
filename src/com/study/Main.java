@@ -1,28 +1,21 @@
 package com.study;
 
-import com.study.recursivecall.RecursiveCall;
-import com.study.sort.BubbleSort;
-import com.study.sort.InsertionSort;
-import com.study.sort.SelectionSort;
+import com.study.search.BinarySearch;
+import com.study.sort.MergeSort;
+import com.study.sort.QuickSort;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        RecursiveCall rc = new RecursiveCall();
-        System.out.println(rc.factorial(5));
+        BinarySearch bs = new BinarySearch();
 
-        ArrayList<Integer> dataList = new ArrayList<Integer>();
+        ArrayList<Integer> dataList = new ArrayList<Integer>(Arrays.asList(1, 3, 5, 6, 7, 8, 9, 10));
 
-        for (int data = 0; data < 10; data++) {
-            dataList.add(data);
-        }
-
-        System.out.println(rc.sum(dataList));
-
-        System.out.println(rc.practice(5));
-
+        System.out.println(bs.search(dataList, 80));
     }
+
 }
