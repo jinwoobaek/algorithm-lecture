@@ -1,21 +1,36 @@
 package com.study;
 
+import com.study.graph.BreadthFirstSearch;
 import com.study.search.BinarySearch;
-import com.study.sort.MergeSort;
-import com.study.sort.QuickSort;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class Main {
 
     public static void main(String[] args) {
+        BreadthFirstSearch bfs = new BreadthFirstSearch();
 
-        BinarySearch bs = new BinarySearch();
+        // graph sample data
+        HashMap<String, ArrayList<String>> graph = new HashMap<String, ArrayList<String>>();
 
-        ArrayList<Integer> dataList = new ArrayList<Integer>(Arrays.asList(1, 3, 5, 6, 7, 8, 9, 10));
+        graph.put("A", new ArrayList<String>(Arrays.asList("B", "C")));
+        graph.put("B", new ArrayList<String>(Arrays.asList("A", "D")));
+        graph.put("C", new ArrayList<String>(Arrays.asList("A", "G", "H", "I")));
+        graph.put("D", new ArrayList<String>(Arrays.asList("B", "E", "F")));
+        graph.put("E", new ArrayList<String>(Arrays.asList("D")));
+        graph.put("F", new ArrayList<String>(Arrays.asList("D")));
+        graph.put("G", new ArrayList<String>(Arrays.asList("C")));
+        graph.put("H", new ArrayList<String>(Arrays.asList("C")));
+        graph.put("I", new ArrayList<String>(Arrays.asList("C", "J")));
+        graph.put("J", new ArrayList<String>(Arrays.asList("I")));
 
-        System.out.println(bs.search(dataList, 80));
+//        System.out.println(graph);
+
+        System.out.println(bfs.bfs(graph, "A"));
+        System.out.println(bfs.bfs(graph, "B"));
+        System.out.println(bfs.bfs(graph, "C"));
     }
 
 }
