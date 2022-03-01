@@ -32,6 +32,7 @@ public class Greedy {
         double totalValue = 0.0;
         double fraction = 0.0; // 해당 물건을 분할에서 담을때 몇프로 담겨있는지
 
+        // 비교 연산 커스텀 사용
         Arrays.sort(objectList, new Comparator<Integer[]>() {
             @Override
             public int compare(Integer[] o1, Integer[] o2) {
